@@ -2433,16 +2433,17 @@ section.terms-section .terms-content .terms-section {
 }
 
 .esa-states {
-    background: white;
+    background: #111827;
     border-radius: 1rem;
     padding: 3rem;
     margin: 3rem 0;
     box-shadow: var(--shadow-md);
+    border: 1px solid #1F2937;
 }
 
 .esa-states h3 {
     font-size: 1.75rem;
-    color: var(--charcoal);
+    color: #F9FAFB;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -2454,9 +2455,14 @@ section.terms-section .terms-content .terms-section {
 }
 
 .state-group h4 {
-    color: var(--dark-gray);
+    color: #F3F4F6;
     font-size: 1.125rem;
     margin-bottom: 1rem;
+    font-weight: 600;
+}
+.state-group p {
+    color: #D1D5DB;
+    font-size: 0.875rem;
 }
 
 .state-list {
