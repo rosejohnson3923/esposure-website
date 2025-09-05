@@ -1,0 +1,31 @@
+{
+  "name": "esposure-website",
+  "version": "1.0.0",
+  "description": "Esposure.gg - Enterprise EdTech infrastructure company providing Private School-as-a-Service platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s .",
+    "dev": "npx serve -s . -l 3004",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "netlify deploy --prod",
+    "preview": "netlify deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosejohnson3923/esposure-website.git"
+  },
+  "keywords": [
+    "edtech",
+    "enterprise",
+    "education",
+    "infrastructure",
+    "saas",
+    "platform"
+  ],
+  "author": "Esposure Inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "dependencies": {}
+}
