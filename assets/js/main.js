@@ -65,14 +65,18 @@ function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+                const ecosystemBar = document.querySelector('.ecosystem-bar');
+                const navbar = document.querySelector('.navbar');
+                const ecosystemBarHeight = ecosystemBar ? ecosystemBar.offsetHeight : 0;
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const totalOffset = ecosystemBarHeight + navbarHeight;
+                const targetPosition = targetSection.offsetTop - totalOffset;
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -158,16 +162,20 @@ function initNavbarEffects() {
 
 // Helper function to get current section in viewport
 function getCurrentSection(sections) {
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-    const scrollPosition = window.scrollY + navbarHeight + 100;
-    
+    const ecosystemBar = document.querySelector('.ecosystem-bar');
+    const navbar = document.querySelector('.navbar');
+    const ecosystemBarHeight = ecosystemBar ? ecosystemBar.offsetHeight : 0;
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const totalOffset = ecosystemBarHeight + navbarHeight;
+    const scrollPosition = window.scrollY + totalOffset + 100;
+
     for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section.offsetTop <= scrollPosition) {
             return section.id;
         }
     }
-    
+
     return sections[0]?.id || '';
 }
 
